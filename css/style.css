@@ -84,6 +84,8 @@ header {
 }
 
 .call-to-action .call-text h2 {
+    height: 15px;
+    overflow: hidden;
     font-size: 0.8em;
 }
 
@@ -93,8 +95,9 @@ header {
 }
 
 .contact-bar {
-    padding: 10px 0 10px 0;
+    padding-top: 10px;
     background-color: var(--xultra-light-gray);
+    height: calc(100% - 110px);
 }
 
 .contact-bar .input-text-container {
@@ -114,6 +117,57 @@ header {
     border: 0 solid transparent;
     width: calc(100% - 50px);
     outline: none;
+}
+
+.contact-bar ul {
+    margin-top: 5px;
+    width: calc(100% - 10px);
+    height: calc(100% - 27px);
+    box-shadow: 1px -1px 1px 0px var(--light-gray);
+    background-color: white;
+    overflow: auto;
+}
+
+.contact-bar ul li {
+    padding: 15px 5px 15px 20px;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.contact-bar ul li:hover {
+    background-color: var(--ultra-light-gray);
+}
+
+.contact-bar ul li.active {
+    background-color: var(--low-light-gray);
+}
+
+.contact-bar ul.contact-list .profile-box {
+    align-items: flex-start;
+}
+
+.contact-bar ul.contact-list .profile-box {
+    align-items: flex-start;
+}
+
+.contact-bar ul li img {
+    width: 40px;
+}
+
+.contact-bar ul li p {
+    font-size: 1.5em;
+    color: var(--gray);
+    margin-top: 2px;
+}
+
+.contact-bar ul li .user-contact {
+    width: calc(100% - 170px);
+}
+
+@media screen and (max-width:1200px) {
+    .contact-bar ul li .user-contact {
+        width: calc(100% - 100px);
+    }
 }
 
 .messages {

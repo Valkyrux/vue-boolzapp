@@ -10,6 +10,9 @@ const app = new Vue({
     methods: {
         activeNotification() {
             this.notificationPermission = true;
+        },
+        setOpenChat(index) {
+            this.openChat = index;
         }
     },
 
