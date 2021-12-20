@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: gainsboro;
+}
+
+.container {
+    min-width: 900px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#app {
+    width: 90%;
+    height: 95%;
+    display: flex;
+}
+
+.profile {
+    width: 30%;
+}
+
+.profile-thumb {
+    border-radius: 50%;
+    width: 40px;
+    margin-right: 10px;
+}
+
+.my-profile {
+    display: flex;
+    align-items: center;
+    font-size: 0.6em;
+}
+
+.actions i {
+    font-size: 1.1rem;
+    color: gray;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.messages {
+    width: calc(70% - 2px);
+}
+
+.messages header {
+    margin-left: 2px;
+}
