@@ -2,11 +2,15 @@ const app = new Vue({
     el: '#app',
     data: {
         userName: "",
+        openChat: 0,
+        notificationPermission: false,
         contacts: [],
     },
     
     methods: {
-
+        activeNotification() {
+            this.notificationPermission = true;
+        }
     },
 
     created() {

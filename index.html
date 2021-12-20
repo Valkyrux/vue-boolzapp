@@ -17,8 +17,8 @@
             <div id="app">
                 <div class="profile">
                     <header>
-                        <div class="my-profile">
-                            <img src="img/avatar_io.jpg" class="profile-thumb" alt="user pic">
+                        <div class="profile-box">
+                            <img src="img/avatar_io.jpg" class="profile-thumb" alt="your pic">
                             <h2 class="user-name">{{userName}}</h2>
                         </div>
                         <div class="actions">
@@ -27,12 +27,22 @@
                             <i class="fas fa-ellipsis-v"></i>
                         </div>
                     </header>
+                    <div class="call-to-action" v-if="notificationPermission == false">
+                        <div class="action-icon">  
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+                        
+                        <div class="call-text">
+                            <h2>Ricevi notifiche di nuovi messaggi</h2>
+                            <a href="#" @click="activeNotification">Attiva notifiche desktop</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="messages">
                     <header>
-                        <div class="my-profile">
-                            <img src="img/avatar_io.jpg" class="profile-thumb" alt="user pic">
-                            <h2 class="user-name">{{userName}}</h2>
+                        <div class="profile-box">
+                            <img :src="'img/avatar'+ contacts[openChat].avatar + '.jpg'" class="profile-thumb" :alt="contacts[openChat].name">
+                                <h2 class="user-name">{{ contacts[openChat].name }}</h2>
                         </div>
                         <div class="actions">
                             <i class="fas fa-search"></i>

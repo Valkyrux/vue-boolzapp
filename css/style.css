@@ -1,3 +1,9 @@
+:root {
+    --light-blue: #8edafc;
+    --main-green: #009688;
+    --light-green: #d5f9ba;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -38,22 +44,47 @@ header {
 
 .profile-thumb {
     border-radius: 50%;
-    width: 40px;
+    width: 30px;
     margin-right: 10px;
 }
 
-.my-profile {
+.profile-box {
     display: flex;
     align-items: center;
-    font-size: 0.6em;
+    font-size: 0.5em;
 }
 
 .actions i {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: gray;
     margin-left: 10px;
     margin-right: 10px;
     cursor: pointer;
+}
+
+.call-to-action {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: var(--light-blue);
+}
+
+.call-to-action .action-icon {
+    margin-right: 10px;
+    padding: 13px;
+    border-radius: 50%;
+    background-color: white;
+    font-size: 1em;
+    color: var(--light-blue);
+}
+
+.call-to-action .call-text h2 {
+    font-size: 0.8em;
+}
+
+.call-to-action .call-text a {
+    font-size: 0.8em;
+    color: gray;
 }
 
 .messages {
