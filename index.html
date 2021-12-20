@@ -38,7 +38,7 @@
                         </div>
                     </div>
 
-                    <div class="contact-bar">
+                    <div class="contact-bar" :class="notificationPermission ? 'active' : ''">
                         <div class="input-text-container">
                             <i class="fas fa-search"></i>
                             <input type="text" placeholder="Cerca o inizia una nuova chat">
@@ -75,6 +75,15 @@
                             <i class="fas fa-ellipsis-v"></i>
                         </div>
                     </header>
+
+                    <main>
+                        <ol class="message-chat-box">
+                            <li></li>
+                        </ol>
+                    </main>
+                    <div class="input-message">
+                        
+                    </div>
                 </div>
             </div>
         </div>
