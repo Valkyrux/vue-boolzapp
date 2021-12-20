@@ -29,6 +29,12 @@ header {
     background-color: var(--light-gray);
 }
 
+.clear-fix::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
 .container {
     min-width: 900px;
     width: 100%;
@@ -197,6 +203,25 @@ header {
 .messages main ol {
     height: 100%;
     background-image: url('../img/mine.jpg');
+    list-style: none;
+    padding: 40px;
+}
+
+.message-box {
+    border-radius: 10px;
+    margin-bottom: 30px;
+    width: 40%;
+    padding: 10px 15px;
+}
+
+.message-box.received {
+    background-color: white;
+    float: left;
+}
+
+.message-box.sent {
+    background-color: var(--light-green);
+    float: right;
 }
 
 .input-message {

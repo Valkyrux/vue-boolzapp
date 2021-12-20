@@ -78,7 +78,12 @@
 
                     <main>
                         <ol class="message-chat-box">
-                            <li></li>
+                            <li v-for="message in contacts[openChat].messages" class="clear-fix">
+                                <div class="message-box" :class="message.status">
+                                    <div class="message-text">{{message.text}}</div>
+                                    <small class="message-data">{{message.date}}</small>
+                                </div>    
+                            </li>
                         </ol>
                     </main>
                     <div class="input-message">
