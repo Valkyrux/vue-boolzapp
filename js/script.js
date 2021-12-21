@@ -27,17 +27,21 @@ const app = new Vue({
                 this.contacts.forEach((contact) => {contact.visible = true});
             }
         },
+        lastReceivedMessage(messages) {
+            const receivedMessages = messages.filter((message) => {return message.status == "received"});
+            return receivedMessages[receivedMessages.length - 1];
+        },
         abbMessage(message){
-            let distance = Math.floor(screen.width/55);
+            let distance = Math.floor(window.innerWidth/70);
             let abbMessage = message;
             if (message.length > distance) {
                 abbMessage = message.slice(0, distance);
                 abbMessage += "...";
+                console.log(distance);
             }
             return abbMessage;
         }
     },
-
     created() {
         this.userName = "Nome Utente";
         this.contacts = [

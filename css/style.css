@@ -193,15 +193,19 @@ header {
     border-left: 2px solid #e5ddd5;
 }
 
+.messages header p{
+    font-size: 1.2em;
+}
+
 .messages main {
     background-color: white;
-    padding-right: 10px;
     height: calc(100% - 50px - 100px);
-    overflow: auto;
+    overflow-y: auto;
 }
 
 .messages main ol {
-    height: 100%;
+    min-height: 100%;
+    width: calc(100% - 10px);
     background-image: url('../img/mine.jpg');
     list-style: none;
     padding: 40px;
