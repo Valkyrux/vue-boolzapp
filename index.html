@@ -41,11 +41,11 @@
                     <div class="contact-bar" :class="notificationPermission ? 'active' : ''">
                         <div class="input-text-container">
                             <i class="fas fa-search"></i>
-                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input type="text" v-model="contactSearchString" placeholder="Cerca o inizia una nuova chat" @keyup="searchInContacts()">
                         </div>
 
                         <ul class="contact-list">
-                            <li v-for="(contact, index) in contacts" @click="setOpenChat(index)" :class="(index==openChat) ? 'active': ''">
+                            <li v-for="(contact, index) in contacts" @click="setOpenChat(index)" :class="(index==openChat) ? 'active': ''" v-if="contact.visible">
                                 <div class="profile-box">
                                     <img :src="'img/avatar' + contact.avatar + '.jpg'" class="profile-thumb" :alt="contact.name">
                                     <div class="user-contact">    

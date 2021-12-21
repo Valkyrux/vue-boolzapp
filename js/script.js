@@ -3,6 +3,7 @@ const app = new Vue({
     data: {
         userName: "",
         openChat: 0,
+        contactSearchString: "",
         notificationPermission: false,
         contacts: [],
     },
@@ -13,6 +14,18 @@ const app = new Vue({
         },
         setOpenChat(index) {
             this.openChat = index;
+        },
+        searchInContacts(){
+            if (this.contactSearchString != "") {
+                this.contacts.forEach((contact) => {contact.visible = false});
+                this.contacts.forEach((contact) => {
+                    if (contact.name.toLowerCase().includes(this.contactSearchString.toLowerCase())) {
+                        contact.visible = true;
+                    }
+                });
+            } else {
+                this.contacts.forEach((contact) => {contact.visible = true});
+            }
         }
     },
 
