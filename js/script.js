@@ -26,6 +26,15 @@ const app = new Vue({
             } else {
                 this.contacts.forEach((contact) => {contact.visible = true});
             }
+        },
+        abbMessage(message){
+            let distance = Math.floor(screen.width/55);
+            let abbMessage = message;
+            if (message.length > distance) {
+                abbMessage = message.slice(0, distance);
+                abbMessage += "...";
+            }
+            return abbMessage;
         }
     },
 

@@ -50,7 +50,7 @@
                                     <img :src="'img/avatar' + contact.avatar + '.jpg'" class="profile-thumb" :alt="contact.name">
                                     <div class="user-contact">    
                                         <h2 class="user-name">{{contact.name}}</h2>
-                                        <p>{{contact.messages[contact.messages.length - 1].text}}</p>
+                                        <p>{{abbMessage(contact.messages[contact.messages.length - 1].text)}}</p>
                                     </div>
                                     <p class="contact-time">
                                         {{contact.messages[contact.messages.length - 1].date}}
