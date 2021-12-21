@@ -2,6 +2,7 @@
     --light-blue: #8edafc;
     --main-green: #009688;
     --light-green: #d5f9ba;
+    --light-pink: #f3eeea;
     --gray: #b1b1b1;
     --light-gray: #eaeaea;
     --low-light-gray: #e9ebeb;
@@ -27,6 +28,12 @@ header {
     align-items: center;
     padding: 10px;
     background-color: var(--light-gray);
+}
+
+button{
+    background-color: transparent;
+    border: 0 solid transparent;
+    cursor: pointer;
 }
 
 .clear-fix::after {
@@ -199,7 +206,7 @@ header {
 
 .messages main {
     background-color: white;
-    height: calc(100% - 50px - 100px);
+    height: calc(100% - 50px - 50px);
     overflow-y: auto;
 }
 
@@ -208,7 +215,7 @@ header {
     width: calc(100% - 10px);
     background-image: url('../img/mine.jpg');
     list-style: none;
-    padding: 40px;
+    padding: 20px 40px;
 }
 
 .message-box {
@@ -216,6 +223,17 @@ header {
     margin-bottom: 30px;
     width: 40%;
     padding: 10px 15px;
+    font-size: 0.9em;
+}
+
+li:last-child .message-box {
+    margin-bottom: 0;
+}
+
+.message-data {
+    font-size: 0.6em;
+    float: right;
+    color: var(--gray);
 }
 
 .message-box.received {
@@ -229,6 +247,32 @@ header {
 }
 
 .input-message {
-    height: 100px;
-    background-color: green;
+    height: 50px;
+    background-color: var(--light-pink);
+    padding: 0 40px 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-message .input-container {
+    height: 35px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.input-message .input-container input {
+    width: 90%;
+    border: 0 solid transparent;
+    outline: none;
+    background-color: transparent;
+}
+
+.chat-input-action {
+    color: var(--gray);
+    font-size: 1.3rem;
 }

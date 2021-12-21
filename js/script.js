@@ -3,6 +3,7 @@ const app = new Vue({
     data: {
         userName: "",
         openChat: 0,
+        inputText: "",
         contactSearchString: "",
         notificationPermission: false,
         contacts: [],
@@ -40,6 +41,22 @@ const app = new Vue({
                 console.log(distance);
             }
             return abbMessage;
+        },
+        sendMessage() {
+            if (this.inputText != "") {
+                const newDate = new Date();
+                const currentDate = newDate.getDate() + "/" + (newDate.getMonth() + 1) + "/" + newDate.getFullYear() + " " + newDate.getHours() + ":" + newDate.getMinutes() + ":" + newDate.getSeconds();
+                const newMessage = {
+                    date: currentDate,
+                    text: this.inputText,
+                    status: "sent"
+                }
+                this.contacts[this.openChat].messages.push(newMessage);
+                this.inputText = "";
+                const messages = document.querySelectorAll(".message-box");
+                // questo timer mi assicura che il messaggio sia già renderizzato prima di scrollare la window su di lui
+                setTimeout(() => {messages[messages.length - 1].scrollIntoView()}, 10);
+            }
         }
     },
     created() {

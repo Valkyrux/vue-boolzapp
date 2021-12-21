@@ -76,8 +76,8 @@
                         </div>
                     </header>
 
-                    <main>
-                        <ol class="message-chat-box">
+                    <main id="chat-box">
+                        <ol class="message-chat-box" >
                             <li v-for="message in contacts[openChat].messages" class="clear-fix">
                                 <div class="message-box" :class="message.status">
                                     <div class="message-text">{{message.text}}</div>
@@ -87,7 +87,15 @@
                         </ol>
                     </main>
                     <div class="input-message">
-                        
+                        <button class="chat-input-action">
+                            <i class="far fa-smile"></i>
+                        </button>
+                        <div class="input-container">    
+                            <input type="text" v-model="inputText" placeholder="Scrivi un messaggio" @keydown.enter = "sendMessage()">
+                        </div>
+                        <button class="chat-input-action">
+                            <i class="fas fa-microphone"></i>
+                        </button>
                     </div>
                 </div>
             </div>
