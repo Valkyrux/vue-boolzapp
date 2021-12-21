@@ -45,7 +45,7 @@
                         </div>
 
                         <ul class="contact-list">
-                            <li v-for="(contact, index) in contacts" @click="setOpenChat(index)" :class="(index==openChat) ? 'active': ''" v-if="contact.visible">
+                            <li v-for="contact in visibilityCheck(contacts)" @click="setOpenChat(setDataBaseIndex(contact))" :class="(setDataBaseIndex(contact)==openChat) ? 'active': ''">
                                 <div class="profile-box">
                                     <img :src="'img/avatar' + contact.avatar + '.jpg'" class="profile-thumb" :alt="contact.name">
                                     <div class="user-contact">    

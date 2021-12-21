@@ -249,9 +249,9 @@ li:last-child .message-box {
 .input-message {
     height: 50px;
     background-color: var(--light-pink);
-    padding: 0 40px 0 40px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    padding: 0 20px;
     align-items: center;
 }
 

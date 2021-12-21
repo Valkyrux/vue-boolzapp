@@ -16,6 +16,9 @@ const app = new Vue({
         setOpenChat(index) {
             this.openChat = index;
         },
+        visibilityCheck(contacts) {
+            return contacts.filter((contact) => {return contact.visible});
+        },
         searchInContacts(){
             if (this.contactSearchString != "") {
                 this.contacts.forEach((contact) => {contact.visible = false});
@@ -26,6 +29,13 @@ const app = new Vue({
                 });
             } else {
                 this.contacts.forEach((contact) => {contact.visible = true});
+            }
+        },
+        setDataBaseIndex(contact) {
+            for(let index in this.contacts) {
+                if(this.contacts[index].name == contact.name) {
+                    return index;
+                }
             }
         },
         lastReceivedMessage(messages) {
@@ -148,4 +158,5 @@ const app = new Vue({
             },
         ];
     }
-})
+    
+});
