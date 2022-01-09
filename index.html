@@ -78,9 +78,10 @@
 
                     <main id="chat-box">
                         <ol class="message-chat-box" >
-                            <li v-for="message in contacts[openChat].messages" class="clear-fix">
+                            <li v-for="message,index in contacts[openChat].messages" class="clear-fix">
                                 <div class="message-box" :class="message.status">
                                     <div class="message-text">{{message.text}}</div>
+                                    <dropdown-toggle-menu v-on:delete-message="deleteMessage(index)"></dropdown-toggle-menu>
                                     <small class="message-data">{{message.date}}</small>
                                 </div>    
                             </li>

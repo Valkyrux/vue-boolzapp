@@ -224,6 +224,7 @@ button{
     width: 40%;
     padding: 10px 15px;
     font-size: 0.9em;
+    position: relative;
 }
 
 li:last-child .message-box {
@@ -275,4 +276,39 @@ li:last-child .message-box {
 .chat-input-action {
     color: var(--gray);
     font-size: 1.3rem;
+}
+
+.dropdown-toggle {
+    color: var(--gray);
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.dropdown-toggle:first-child {
+    cursor: pointer;
+}
+
+.dropdown-toggle:nth-child(2) {
+    text-align: right;
+    cursor: pointer;
+}
+
+.dropdown-toggle .drop-down-menu {
+    background-color: var(--ultra-light-gray);
+    color: black;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+.dropdown-toggle .drop-down-menu li {
+    list-style-type: none;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.dropdown-toggle .drop-down-menu li:hover {
+    background-color: var(--light-blue);
+    color: white;
 }
