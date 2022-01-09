@@ -48,12 +48,12 @@ const app = new Vue({
             if (message.length > distance) {
                 abbMessage = message.slice(0, distance);
                 abbMessage += "...";
-                console.log(distance);
             }
             return abbMessage;
         },
         sendMessage() {
-            if (this.inputText != "") {
+            const controlForText = this.inputText.replace(/ /g, "");
+            if (controlForText != "") {
                 const newDate = new Date();
                 const currentDate = newDate.getDate() + "/" + (newDate.getMonth() + 1) + "/" + newDate.getFullYear() + " " + newDate.getHours() + ":" + newDate.getMinutes() + ":" + newDate.getSeconds();
                 const newMessage = {
@@ -67,6 +67,29 @@ const app = new Vue({
                 // questo timer mi assicura che il messaggio sia già renderizzato prima di scrollare la window su di lui
                 setTimeout(() => {messages[messages.length - 1].scrollIntoView()}, 10);
             }
+        },
+        receiveARandomMessage() {
+            const randomMessages= [
+                "hey.. come stai?",
+                "Ciao lettore",
+                "Da quanto tempo non ci sentiamo",
+                "Non mi devi più rivolgere la parola",
+                "Hai sentito le ultime novità sulle nuove schede grafiche Intel?"
+            ];
+            setTimeout(() => {
+                const newDate = new Date();
+                    const currentDate = newDate.getDate() + "/" + (newDate.getMonth() + 1) + "/" + newDate.getFullYear() + " " + newDate.getHours() + ":" + newDate.getMinutes() + ":" + newDate.getSeconds();
+                    const newMessage = {
+                        date: currentDate,
+                        text: randomMessages[Math.floor(Math.random()*randomMessages.length)],
+                        status: "received"
+                    }
+                    this.contacts[this.openChat].messages.push(newMessage);
+                    const messages = document.querySelectorAll(".message-box");
+                    // questo timer mi assicura che il messaggio sia già renderizzato prima di scrollare la window su di lui
+                    setTimeout(() => {messages[messages.length - 1].scrollIntoView()}, 10);
+                },
+            2000);
         }
     },
     created() {

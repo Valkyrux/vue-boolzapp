@@ -91,7 +91,7 @@
                             <i class="far fa-smile"></i>
                         </button>
                         <div class="input-container">    
-                            <input type="text" v-model="inputText" placeholder="Scrivi un messaggio" @keydown.enter = "sendMessage()">
+                            <input type="text" v-model="inputText" placeholder="Scrivi un messaggio" @keydown.enter = "sendMessage(); receiveARandomMessage()">
                         </div>
                         <button class="chat-input-action">
                             <i class="fas fa-microphone"></i>
