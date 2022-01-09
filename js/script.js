@@ -17,6 +17,7 @@ const app = new Vue({
         contactSearchString: "",
         notificationPermission: false,
         contacts: [],
+        isTypingBot: false
     },
     
     methods: {
@@ -51,6 +52,16 @@ const app = new Vue({
         lastReceivedMessage(messages) {
             const receivedMessages = messages.filter((message) => {return message.status == "received"});
             return receivedMessages[receivedMessages.length - 1];
+        },
+        logStatus() {
+            const lastReceivedMessage = this.lastReceivedMessage(this.contacts[this.openChat].messages);
+            if(this.isTypingBot) {
+                return "sta scrivendo";
+            } if(lastReceivedMessage) {
+                return "Ultimo accesso oggi alle: " + lastReceivedMessage.date;
+            } else {
+                return "online";
+            }
         },
         abbMessage(message){
             let distance = Math.floor(window.innerWidth/70);
@@ -87,6 +98,7 @@ const app = new Vue({
                 "Hai sentito le ultime novità sulle nuove schede grafiche Intel?"
             ];
             const replyTime = Math.random()*5000;
+            setTimeout(() => {this.isTypingBot = true}, replyTime/3);
             setTimeout(() => {
                 const newDate = new Date();
                     const currentDate = newDate.getDate() + "/" + (newDate.getMonth() + 1) + "/" + newDate.getFullYear() + " " + newDate.getHours() + ":" + newDate.getMinutes() + ":" + newDate.getSeconds();
@@ -96,6 +108,7 @@ const app = new Vue({
                         status: "received"
                     }
                     this.contacts[this.openChat].messages.push(newMessage);
+                    this.isTypingBot = false;
                     const messages = document.querySelectorAll(".message-box");
                     // questo timer mi assicura che il messaggio sia già renderizzato prima di scrollare la window su di lui
                     setTimeout(() => {messages[messages.length - 1].scrollIntoView()}, 10);
@@ -103,9 +116,12 @@ const app = new Vue({
             replyTime);
         },
         deleteMessage(index) {
-            this.contacts[this.openChat].messages.splice(index, 1);
-        }
-        
+            if( this.contacts[this.openChat].messages.length != 1) {
+                this.contacts[this.openChat].messages.splice(index, 1);
+            } else {
+                this.contacts.splice(this.openChat, 1);
+            }
+        } 
     },
     created() {
         this.userName = "Nome Utente";

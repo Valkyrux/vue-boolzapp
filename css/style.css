@@ -231,6 +231,11 @@ li:last-child .message-box {
     margin-bottom: 0;
 }
 
+.message-text {
+    width: calc(100% - 18px);
+    overflow: hidden;
+}
+
 .message-data {
     font-size: 0.6em;
     float: right;
@@ -276,6 +281,7 @@ li:last-child .message-box {
 .chat-input-action {
     color: var(--gray);
     font-size: 1.3rem;
+    width: 20px;
 }
 
 .dropdown-toggle {
