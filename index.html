@@ -94,7 +94,8 @@
                             <input type="text" v-model="inputText" placeholder="Scrivi un messaggio" @keydown.enter = "sendMessage(); receiveARandomMessage()">
                         </div>
                         <button class="chat-input-action">
-                            <i class="fas fa-microphone"></i>
+                            <i class="fas fa-microphone" v-if="!inputText.replace(/ /g, '')"></i>
+                            <i class="fas fa-paper-plane" v-else @click="sendMessage(); receiveARandomMessage()"></i>
                         </button>
                     </div>
                 </div>

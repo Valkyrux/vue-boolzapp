@@ -76,6 +76,7 @@ const app = new Vue({
                 "Non mi devi più rivolgere la parola",
                 "Hai sentito le ultime novità sulle nuove schede grafiche Intel?"
             ];
+            const replyTime = Math.random()*5000;
             setTimeout(() => {
                 const newDate = new Date();
                     const currentDate = newDate.getDate() + "/" + (newDate.getMonth() + 1) + "/" + newDate.getFullYear() + " " + newDate.getHours() + ":" + newDate.getMinutes() + ":" + newDate.getSeconds();
@@ -89,7 +90,7 @@ const app = new Vue({
                     // questo timer mi assicura che il messaggio sia già renderizzato prima di scrollare la window su di lui
                     setTimeout(() => {messages[messages.length - 1].scrollIntoView()}, 10);
                 },
-            2000);
+            replyTime);
         }
     },
     created() {
