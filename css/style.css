@@ -231,15 +231,12 @@ li:last-child .message-box {
     margin-bottom: 0;
 }
 
-.message-text {
-    width: calc(100% - 18px);
-    overflow: hidden;
+.message-box .dropdown-toggle {
+    display: none;
 }
 
-.message-data {
-    font-size: 0.6em;
-    float: right;
-    color: var(--gray);
+.message-box:hover .dropdown-toggle {
+    display: block;
 }
 
 .message-box.received {
@@ -250,6 +247,17 @@ li:last-child .message-box {
 .message-box.sent {
     background-color: var(--light-green);
     float: right;
+}
+
+.message-text {
+    width: calc(100% - 18px);
+    overflow: hidden;
+}
+
+.message-data {
+    font-size: 0.6em;
+    float: right;
+    color: var(--gray);
 }
 
 .input-message {

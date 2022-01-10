@@ -1,4 +1,3 @@
-// Define a new component called button-counter
 Vue.component('dropdown-toggle-menu', {
     data: function () {
         return {
@@ -97,6 +96,7 @@ const app = new Vue({
                 "Non mi devi più rivolgere la parola",
                 "Hai sentito le ultime novità sulle nuove schede grafiche Intel?"
             ];
+            const selectThisChat = this.openChat;
             const replyTime = Math.random()*5000;
             setTimeout(() => {this.isTypingBot = true}, replyTime/3);
             setTimeout(() => {
@@ -107,7 +107,7 @@ const app = new Vue({
                         text: randomMessages[Math.floor(Math.random()*randomMessages.length)],
                         status: "received"
                     }
-                    this.contacts[this.openChat].messages.push(newMessage);
+                    this.contacts[selectThisChat].messages.push(newMessage);
                     this.isTypingBot = false;
                     const messages = document.querySelectorAll(".message-box");
                     // questo timer mi assicura che il messaggio sia già renderizzato prima di scrollare la window su di lui
