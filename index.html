@@ -60,7 +60,10 @@
                         </ul>
                     </div>
                 </div>
-                <div class="messages">
+                <div class="messages" v-if="openChat == -1">
+                    benvenuto scegli un contatto dalla lista
+                </div>
+                <div class="messages" v-if="openChat >= 0">
                     <header>
                         <div class="profile-box">
                             <img :src="'img/avatar'+ contacts[openChat].avatar + '.jpg'" class="profile-thumb" :alt="contacts[openChat].name">

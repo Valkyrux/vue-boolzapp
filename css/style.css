@@ -314,6 +314,7 @@ li:last-child .message-box {
     text-align: left;
     position: relative;
     z-index: 1;
+    box-shadow: 1px 1px 1px 1px var(--gray);
 }
 
 .dropdown-toggle .drop-down-menu li {

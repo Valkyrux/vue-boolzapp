@@ -5,13 +5,13 @@ Vue.component('dropdown-toggle-menu', {
         }
     },
     template: `<div class="dropdown-toggle"><i class="fas fa-chevron-down" v-show="!show" @click="show=true"></i><i class="fas fa-chevron-up" v-show="show" @click="show=false"></i><div class="drop-down-menu" v-show="show"><ul><li>informazioni</li><li v-on:click="$emit('delete-message'); show = false">cancella messaggio</li></ul></div></div>`
-  });
+});
 
 const app = new Vue({
     el: '#app',
     data: {
         userName: "",
-        openChat: 0,
+        openChat: -1,
         inputText: "",
         contactSearchString: "",
         notificationPermission: false,
