@@ -191,9 +191,27 @@ button{
     }
 }
 
-.messages {
+.messages, .welcome-screen{
     width: calc(70% - 2px);
     height: 100%;
+}
+
+.welcome-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--ultra-light-gray);
+}
+
+.welcome-screen h1 {
+    text-align: center;
+    color: var(--main-green);
+    text-transform: uppercase;
+}
+
+.welcome-screen p {
+    color: var(--gray);
+    font-size: 1.2em;
 }
 
 .messages header {
